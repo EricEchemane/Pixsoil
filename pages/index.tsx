@@ -1,9 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
 import { Button, Group, Stack, Text } from '@mantine/core';
-import { NextLink } from '@mantine/next';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import { IconArrowNarrowRight, IconDownload } from '@tabler/icons';
+import Link from 'next/link';
 
 const Home: NextPage = () => {
   return (
@@ -20,12 +20,16 @@ const Home: NextPage = () => {
         </Text>
 
         <Group position='center' mt='5rem'>
-          <Button href={'/app/Pixsoil.apk'} download component={NextLink} size='lg' style={{ backgroundColor: '#a68c67' }}>
-            Download Android App &nbsp; <IconDownload />
-          </Button>
-          <Button href={'/web'} component={NextLink} size='lg' style={{ backgroundColor: '#a68c67' }}>
-            Try Pixsoil for Web &nbsp; <IconArrowNarrowRight />
-          </Button>
+          <Link href={'/app/Pixsoil.apk'} download>
+            <Button size='lg' style={{ backgroundColor: '#a68c67' }}>
+              Download Android App &nbsp; <IconDownload />
+            </Button>
+          </Link>
+          <Link href={'/web'}>
+            <Button size='lg' style={{ backgroundColor: '#a68c67' }}>
+              Try Pixsoil for Web &nbsp; <IconArrowNarrowRight />
+            </Button>
+          </Link>
         </Group>
       </Stack>
     </>
