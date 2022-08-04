@@ -1,18 +1,30 @@
 /* eslint-disable @next/next/no-img-element */
-import { Group } from '@mantine/core';
+import { Box, Group, Title } from '@mantine/core';
+import { useMediaQuery } from '@mantine/hooks';
+import MainContent from 'components/MainContent';
 import MobileApp from 'components/MobileApp';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 
 const Home: NextPage = () => {
+  const match = useMediaQuery('(max-width: 877px)', false);
   return (
     <>
       <Head>
         <title> Pixsoil - Soil Type Scanner </title>
       </Head>
 
-      <Group>
-        <MobileApp />
+      {match && <Title mt='xl' align='center' order={1}> Pixsoil </Title>}
+
+      <Group
+        align={'flex-start'}
+        position='center'>
+        <Box>
+          <MobileApp />
+        </Box>
+        <Box p='xl' style={{ marginTop: match ? '508px' : 0 }}>
+          <MainContent />
+        </Box>
       </Group>
     </>
   );

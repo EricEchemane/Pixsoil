@@ -1,5 +1,4 @@
 body {
-  min-height: 100vh;
   background-image: url(/background.svg);
   background-size: 100%;
   background-attachment: fixed;
@@ -9,12 +8,20 @@ body {
   font-family: 'Oleo Script', cursive;
   font-size: 5rem;
   color: #815115;
-  margin: 4rem auto;
+  margin: 5rem auto;
 }
 
 .mobile {
   position: relative;
   display: inline-block;
+  width: 242px;
+  margin-top: calc((100vh - 508px) / 2);
+}
+
+@media screen and (max-width: 877px) {
+  .mobile {
+    margin-top: 4rem;
+  }
 }
 
 .mobile video {
@@ -25,8 +32,8 @@ body {
 }
 
 .mobile .frame {
-  width: 243px;
-  height: 510px;
+  width: 242px;
+  height: 508px;
   position: absolute;
   top: 0;
   left: 0;
