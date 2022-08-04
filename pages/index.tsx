@@ -14,7 +14,7 @@ const Home: NextPage = () => {
 
       <Stack align={'center'} spacing={0}>
         <Title className='pixsoil'> Pixsoil </Title>
-        <Text align='center' px={'md'} size={'xl'} > Scan your soil for better planting decision making  </Text>
+        <Text align='center' px={'md'} size={'xl'} > Scan your soil for better plant decision making  </Text>
         <Text align='center' px={'md'} color={'dimmed'} >
           A machine learning web and mobile application for soil type classification
         </Text>
