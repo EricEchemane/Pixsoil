@@ -48,7 +48,7 @@ const Web: NextPage = () => {
     return (
         <>
             <Head>
-                <title> Pixsoil Web </title>
+                <title> Pixsoil Web - Run Pixsoil on your browser </title>
             </Head>
 
             <Paper shadow={'md'} px={'lg'} mb={'lg'}>
@@ -60,7 +60,6 @@ const Web: NextPage = () => {
                 <DropImage onDrop={handleDrop} imgsrc={imgSrc} loading={classifying} />
                 <FileInfo file={file} />
             </Group>
-
 
             {prediction &&
                 <Box p={'lg'}>

@@ -31,7 +31,7 @@ export default function Result(result: {
     return (
         <>
             <Text weight={700} mb={10}> Model Results: </Text>
-            <Table striped>
+            <Table striped className='results'>
                 <thead>
                     <tr>
                         <th>Label</th>
