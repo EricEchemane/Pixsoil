@@ -14,9 +14,9 @@ const Home: NextPage = () => {
 
       <Stack align={'center'} spacing={0}>
         <img src='/logo.png' alt='logo' width={'250px'} />
-        <Text size={'xl'} > Scan your soil for better planting  </Text>
-        <Text color={'dimmed'} >
-          A machine learning web and mobile application soil type classification for plant decision making
+        <Text align='center' px={'md'} size={'xl'} > Scan your soil for better planting decision making  </Text>
+        <Text align='center' px={'md'} color={'dimmed'} >
+          A machine learning web and mobile application for soil type classification
         </Text>
 
         <Group position='center' mt='5rem'>
