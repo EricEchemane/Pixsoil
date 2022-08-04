@@ -11,3 +11,23 @@ body {
   color: #815115;
   margin: 4rem auto;
 }
+
+.mobile {
+  position: relative;
+  display: inline-block;
+}
+
+.mobile video {
+  width: 220px;
+  position: absolute;
+  top: 10px;
+  left: 9px;
+}
+
+.mobile .frame {
+  width: 243px;
+  height: 510px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
