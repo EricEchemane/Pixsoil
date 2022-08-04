@@ -1,8 +1,13 @@
-import { Group, Text, useMantineTheme } from '@mantine/core';
+/* eslint-disable @next/next/no-img-element */
+import { Col, Group, Stack, Text, useMantineTheme } from '@mantine/core';
 import { IconUpload, IconPhoto, IconX } from '@tabler/icons';
-import { Dropzone, DropzoneProps, IMAGE_MIME_TYPE } from '@mantine/dropzone';
+import { Dropzone, DropzoneProps } from '@mantine/dropzone';
 
-export function DropImage(props: Partial<DropzoneProps>) {
+interface DropImageProps extends DropzoneProps {
+    imgsrc: string | null;
+}
+
+export function DropImage(props: Partial<DropImageProps>) {
     const theme = useMantineTheme();
     return (
         <Dropzone
@@ -28,18 +33,31 @@ export function DropImage(props: Partial<DropzoneProps>) {
                         color={theme.colors.red[theme.colorScheme === 'dark' ? 4 : 6]}
                     />
                 </Dropzone.Reject>
-                <Dropzone.Idle>
+                {!props.imgsrc && <Dropzone.Idle>
                     <IconPhoto size={50} stroke={1.5} />
-                </Dropzone.Idle>
+                </Dropzone.Idle>}
 
-                <div>
-                    <Text size="xl" inline>
-                        Drag image here or click to select one
-                    </Text>
-                    <Text size="sm" color="dimmed" inline mt={7}>
-                        Each file should not exceed 5mb
-                    </Text>
-                </div>
+                {
+                    props.imgsrc ?
+                        <Stack align={'center'}>
+                            <img
+                                id='image'
+                                src={props.imgsrc}
+                                alt="soil image"
+                                height={"256"}
+                                width={"256"} />
+                            <Text align='center'>  Click the image again to choose different one </Text>
+                        </Stack>
+                        : <div>
+                            <Text size="xl" inline>
+                                Drag image here or click to select one
+                            </Text>
+                            <Text size="sm" color="dimmed" inline mt={7}>
+                                Each file should not exceed 5mb
+                            </Text>
+                        </div>
+                }
+
             </Group>
         </Dropzone>
     );
