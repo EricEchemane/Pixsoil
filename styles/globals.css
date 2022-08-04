@@ -4,3 +4,10 @@ body {
   background-size: 100%;
   background-attachment: fixed;
 }
+
+.pixsoil {
+  font-family: 'Oleo Script', cursive;
+  font-size: 5rem;
+  color: #815115;
+  margin: 4rem auto;
+}

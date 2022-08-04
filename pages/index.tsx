@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import { Button, Group, Stack, Text } from '@mantine/core';
+import { Button, Group, Stack, Text, Title } from '@mantine/core';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import { IconArrowNarrowRight, IconDownload } from '@tabler/icons';
@@ -13,7 +13,7 @@ const Home: NextPage = () => {
       </Head>
 
       <Stack align={'center'} spacing={0}>
-        <img src='/logo.png' alt='logo' width={'250px'} />
+        <Title className='pixsoil'> Pixsoil </Title>
         <Text align='center' px={'md'} size={'xl'} > Scan your soil for better planting decision making  </Text>
         <Text align='center' px={'md'} color={'dimmed'} >
           A machine learning web and mobile application for soil type classification
@@ -21,12 +21,12 @@ const Home: NextPage = () => {
 
         <Group position='center' mt='5rem'>
           <Link href={'/app/Pixsoil.apk'} download>
-            <Button size='lg' style={{ backgroundColor: '#a68c67' }}>
+            <Button size='lg' style={{ backgroundColor: '#815115' }}>
               Download Android App &nbsp; <IconDownload />
             </Button>
           </Link>
           <Link href={'/web'}>
-            <Button size='lg' style={{ backgroundColor: '#a68c67' }}>
+            <Button size='lg' style={{ backgroundColor: '#815115' }}>
               Try Pixsoil for Web &nbsp; <IconArrowNarrowRight />
             </Button>
           </Link>
