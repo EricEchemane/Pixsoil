@@ -13,6 +13,8 @@ class MyDocument extends Document {
             <Html>
                 <Head>
                     <link rel="icon" href="logo.png" />
+                    <meta name='description' content='Scan your soil for better planting decisions' />
+                    <meta name='author' content='Eric Echemane' />
                 </Head>
                 <body>
                     <Main />
