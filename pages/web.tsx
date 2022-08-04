@@ -57,7 +57,7 @@ const Web: NextPage = () => {
             </Paper>
 
             <Group p={'lg'}>
-                <DropImage onDrop={handleDrop} imgsrc={imgSrc} />
+                <DropImage onDrop={handleDrop} imgsrc={imgSrc} loading={classifying} />
                 <FileInfo file={file} />
             </Group>
 

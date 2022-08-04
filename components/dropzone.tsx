@@ -5,6 +5,7 @@ import { Dropzone, DropzoneProps } from '@mantine/dropzone';
 
 interface DropImageProps extends DropzoneProps {
     imgsrc: string | null;
+    loading: boolean;
 }
 
 export function DropImage(props: Partial<DropImageProps>) {
@@ -16,6 +17,7 @@ export function DropImage(props: Partial<DropImageProps>) {
             maxSize={3 * 1024 ** 2}
             accept={['image/jpeg', 'image/png']}
             multiple={false}
+            loading={props.loading}
             {...props}
         >
             <Group position="center" spacing="xl" style={{ minHeight: 220, pointerEvents: 'none' }}>
