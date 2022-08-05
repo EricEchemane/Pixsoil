@@ -1,4 +1,4 @@
-import { Container, List, Stack, Text, Title } from '@mantine/core';
+import { Anchor, Container, List, Stack, Text, Title } from '@mantine/core';
 import Head from 'next/head';
 import Link from 'next/link';
 import React from 'react';
@@ -66,6 +66,15 @@ export default function about() {
                     </Text>
                     <Text>
                         For more information about the researchers, visit <Link href='/researchers'>The Researchers</Link> page.
+                        Or if you want to contribute to this project, Pixsoil is open source. Just visit the following codebases and contact the developer.
+                        <List withPadding>
+                            <List.Item>
+                                <Anchor href='https://github.com/EricEchemane/Soil-Type-Classifier-Through-Image-Processing' target={'_blank'}> Training Code </Anchor>
+                            </List.Item>
+                            <List.Item>
+                                <Anchor href='https://github.com/EricEchemane/Pixsoil' target={'_blank'}> Pixsoil Frontend Code </Anchor>
+                            </List.Item>
+                        </List>
                     </Text>
                     <List withPadding>
                         <List.Item> Eric Echemane </List.Item>
