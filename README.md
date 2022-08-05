@@ -25,7 +25,7 @@ The Future researcher(s), the process and outcome of this research will serve as
 ## Contribution and Acknowledgement
 *Pixsoil was made possible by the following stakeholders. They put significant amount of efforts in this project.*
 
-For more information about the researchers, visit The Researchers page.
+For more information about the researchers, visit The [Researchers page.](https://pixsoil.vercel.app/researchers)
 
 - Eric Echemane
 - Mark Alcel Bautista
