@@ -11,7 +11,7 @@ class MyDocument extends Document {
         return (
             <Html>
                 <Head>
-                    <link rel="icon" href="favicon.svg" />
+                    <link rel="icon" href="/favicon.png" />
                     <meta name='description' content='Scan your soil for better planting decisions' />
                     <meta name='author' content='Eric Echemane' />
                     <link rel="preconnect" href="https://fonts.googleapis.com" />
