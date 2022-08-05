@@ -1,5 +1,6 @@
 import { Container, List, Stack, Text, Title } from '@mantine/core';
 import Head from 'next/head';
+import Link from 'next/link';
 import React from 'react';
 
 export default function about() {
@@ -15,7 +16,7 @@ export default function about() {
                     <Text>
                         <span className='oleo'>Pixsoil</span> is the product of our Thesis entitled <i>Image Processing for Soil Type Classification</i>, presented to the faculty of the College of
                         Information Technology and Computer Studies in
-                        Pamantasan ng Lungsod ng Muntinlupa -
+                        University of Muntinlupa -
                         Muntinlupa City, Philippines.
                     </Text>
                     <Text>
@@ -59,6 +60,21 @@ export default function about() {
                         <i>{'The Future researcher(s)'}</i>, the process and outcome of this research will serve as a reference and/or inspiration for future study. Furthermore, the results of this study will also serve as a basis for future researchers to enhance and further expound the research that will lead to accurate and more beneficial results.
                     </Text>
 
+                    <Title order={3}> Contribution and Acknowledgement </Title>
+                    <Text>
+                        <i>Pixsoil was made possible by the following stakeholders. They put significant amount of efforts in this project.</i>
+                    </Text>
+                    <Text>
+                        For more information about the researchers, visit <Link href='/researchers'>The Researchers</Link> page.
+                    </Text>
+                    <List withPadding>
+                        <List.Item> Eric Echemane </List.Item>
+                        <List.Item> Mark Alcel Bautista </List.Item>
+                        <List.Item> Jamel Varela </List.Item>
+                        <List.Item> Our Research Adviser </List.Item>
+                        <List.Item> Our Research Panels </List.Item>
+                        <List.Item> The University of Muntinlupa </List.Item>
+                    </List>
                 </Stack>
             </Container>
         </>
