@@ -4,6 +4,10 @@ body {
   background-attachment: fixed;
 }
 
+.oleo {
+  font-family: 'Oleo Script', cursive;
+}
+
 .pixsoil {
   font-family: 'Oleo Script', cursive;
   font-size: 5rem;
