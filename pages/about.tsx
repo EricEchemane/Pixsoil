@@ -66,15 +66,11 @@ export default function about() {
                     </Text>
                     <Text>
                         For more information about the researchers, visit <Link href='/researchers'>The Researchers</Link> page.
-                        Or if you want to contribute to this project, Pixsoil is open source. Just visit the following codebases and contact the developer.
-                        <List withPadding>
-                            <List.Item>
-                                <Anchor href='https://github.com/EricEchemane/Soil-Type-Classifier-Through-Image-Processing' target={'_blank'}> Training Code </Anchor>
-                            </List.Item>
-                            <List.Item>
-                                <Anchor href='https://github.com/EricEchemane/Pixsoil' target={'_blank'}> Pixsoil Frontend Code </Anchor>
-                            </List.Item>
-                        </List>
+                        Or if you want to contribute to this project, Pixsoil is open source. Just visit the following codebases,
+                        <Anchor href='https://github.com/EricEchemane/Soil-Type-Classifier-Through-Image-Processing' target={'_blank'}> Model Training</Anchor>,
+                        <Anchor href='https://github.com/EricEchemane/Pixsoil' target={'_blank'}> Pixsoil for Web</Anchor>, and
+                        <Anchor href='https://github.com/EricEchemane/Soil-type-classifier-using-convolutional-neural-network/tree/main/leafjem_app' target={'_blank'}> Pixsoil for Android</Anchor>,
+                        then contact the <Anchor href='https://github.com/EricEchemane/' target={'_blank'}> developer.</Anchor>
                     </Text>
                     <List withPadding>
                         <List.Item> Eric Echemane </List.Item>
