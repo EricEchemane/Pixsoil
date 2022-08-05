@@ -28,8 +28,12 @@ export default function MainContent() {
             </Group>
 
             <Group mt='6rem' spacing={'md'} position={match ? 'center' : 'left'}>
-                <Anchor href={'/about'} color='dimmed'> What is Pixsoil? </Anchor>
-                <Anchor href={'/researchers'} color='dimmed'> The Researchers </Anchor>
+                <Link href={'/about'}>
+                    <Text style={{ cursor: 'pointer' }}>What is Pixsoil?</Text>
+                </Link>
+                <Link href={'/researchers'}>
+                    <Text style={{ cursor: 'pointer' }}>The Researchers</Text>
+                </Link>
             </Group>
         </Box>
     );
