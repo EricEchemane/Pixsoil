@@ -53,7 +53,7 @@ const Web: NextPage = () => {
 
             <Paper shadow={'md'} px={'lg'} mb={'lg'}>
                 <img src='/logo.png' alt='logo' width={'100px'} />
-                <sup><strong>web</strong></sup>
+                <sup><strong>🌱web</strong></sup>
             </Paper>
 
             <Group p={'lg'}>
