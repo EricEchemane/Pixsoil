@@ -1,7 +1,7 @@
 import React from 'react';
 import { IconArrowNarrowRight, IconDownload } from '@tabler/icons';
 import Link from 'next/link';
-import { Box, Button, Group, Text, Title } from '@mantine/core';
+import { Anchor, Box, Button, Group, Text, Title } from '@mantine/core';
 import { useMediaQuery } from '@mantine/hooks';
 
 export default function MainContent() {
@@ -25,6 +25,11 @@ export default function MainContent() {
                         Try Pixsoil for web &nbsp; <IconArrowNarrowRight />
                     </Button>
                 </Link>
+            </Group>
+
+            <Group mt='6rem' spacing={'md'} position={match ? 'center' : 'left'}>
+                <Anchor href={'/about'} color='dimmed'> What is Pixsoil? </Anchor>
+                <Anchor href={'/researchers'} color='dimmed'> The Researchers </Anchor>
             </Group>
         </Box>
     );
