@@ -8,7 +8,7 @@ export default function MainContent() {
     const match = useMediaQuery('(max-width: 877px)', false);
     return (
         <Box>
-            <Title align={match ? 'center' : 'left'} className='pixsoil'> Pixsoil </Title>
+            <Title align={match ? 'center' : 'left'} className='pixsoil'> Pixsoil<sup>🌱</sup> </Title>
             <Title align={match ? 'center' : 'left'} order={2}> Scan your soil for better plant decision making  </Title>
             <Text align={match ? 'center' : 'left'} mt='xs'>
                 A machine learning web and mobile application for soil type classification
@@ -17,12 +17,12 @@ export default function MainContent() {
             <Group mt='5rem' position={match ? 'center' : 'left'}>
                 <Link href={'/app/Pixsoil.apk'} download>
                     <Button size='lg' style={{ backgroundColor: '#815115' }}>
-                        Download Android App &nbsp; <IconDownload />
+                        Download android app &nbsp; <IconDownload />
                     </Button>
                 </Link>
                 <Link href={'/web'}>
                     <Button size='lg' style={{ backgroundColor: '#815115' }}>
-                        Try Pixsoil for Web &nbsp; <IconArrowNarrowRight />
+                        Try Pixsoil for web &nbsp; <IconArrowNarrowRight />
                     </Button>
                 </Link>
             </Group>
