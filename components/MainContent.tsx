@@ -16,7 +16,7 @@ export default function MainContent() {
 
             <Group mt='5rem' position={match ? 'center' : 'left'}>
                 <Link href={'/app/Pixsoil.apk'} download>
-                    <Button size='lg' style={{ backgroundColor: '#815115' }}>
+                    <Button size='lg' style={{ backgroundColor: '#86d72f' }}>
                         Download android app &nbsp; <IconDownload />
                     </Button>
                 </Link>
