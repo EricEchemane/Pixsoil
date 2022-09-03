@@ -12,6 +12,7 @@ import { IconCamera } from '@tabler/icons';
 import CameraCapturer from 'components/CameraCapturer';
 
 const Web: NextPage = () => {
+    const isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
     const [imgSrc, setImgSrc] = useState<string>();
     const [file, setFile] = useState<File>();
     const [classifying, setClassifying] = useState(false);
@@ -81,9 +82,12 @@ const Web: NextPage = () => {
                 <sup><strong>🌱web</strong></sup>
             </Paper>
 
-            <Group p={'lg'}>
-                <Stack>
-                    <DropImage onDrop={handleDrop} imgsrc={imgSrc} loading={classifying} />
+            <Group p={'lg'} align='flex-start'>
+                <Stack align='stretch' style={{ width: isMobileDevice ? '100%' : 'auto' }}>
+                    <DropImage
+                        onDrop={handleDrop}
+                        imgsrc={imgSrc}
+                        loading={classifying} />
                     <Button
                         onClick={openCamera}
                         rightIcon={<IconCamera />}
