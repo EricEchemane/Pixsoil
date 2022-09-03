@@ -24,7 +24,10 @@ export default function CameraCapturer(props: {
             await camera.requestFullscreen();
 
         navigator.mediaDevices.getUserMedia({
-            video: true
+            audio: false,
+            video: {
+                facingMode: 'environment'
+            }
         })
             .then(mediaStream => {
                 const videoElement = document.querySelector('video');
