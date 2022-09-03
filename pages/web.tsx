@@ -5,14 +5,17 @@ import Head from 'next/head';
 import { useState } from 'react';
 import * as tf from '@tensorflow/tfjs';
 import { labels } from 'model/labels';
-import { Box, Group, Paper, Stack } from '@mantine/core';
+import { Box, Button, Group, Paper, Stack } from '@mantine/core';
 import FileInfo from 'components/FileInfo';
 import Result from 'components/Results';
+import { IconCamera } from '@tabler/icons';
+import CameraCapturer from 'components/CameraCapturer';
 
 const Web: NextPage = () => {
     const [imgSrc, setImgSrc] = useState<string>();
     const [file, setFile] = useState<File>();
     const [classifying, setClassifying] = useState(false);
+    const [cameraIsOpen, setCameraIsOpen] = useState(false);
     const [prediction, setPrediction] = useState<{
         type: string;
         confidence: number;
@@ -30,6 +33,20 @@ const Web: NextPage = () => {
         img.height = 256;
         img.src = URL.createObjectURL(file);
 
+        predict(img);
+    }
+
+    const predictFromCamera = (dataUrl: string) => {
+        setClassifying(true);
+        const img = document.createElement('img');
+        img.width = 256;
+        img.height = 256;
+        img.src = dataUrl;
+        setImgSrc(dataUrl);
+        predict(img);
+    };
+
+    const predict = async (img: HTMLImageElement) => {
         const model = await tf.loadLayersModel('/tfjs_files/model.json');
         const imageTensor = tf.browser.fromPixels(img)
             .expandDims(0)
@@ -43,7 +60,7 @@ const Web: NextPage = () => {
 
         setPrediction({ confidence: max, type: labels[index] });
         setClassifying(false);
-    }
+    };
 
     return (
         <>
@@ -57,7 +74,16 @@ const Web: NextPage = () => {
             </Paper>
 
             <Group p={'lg'}>
-                <DropImage onDrop={handleDrop} imgsrc={imgSrc} loading={classifying} />
+                <Stack>
+                    <DropImage onDrop={handleDrop} imgsrc={imgSrc} loading={classifying} />
+                    <Button
+                        onClick={() => setCameraIsOpen(true)}
+                        rightIcon={<IconCamera />}
+                        variant='light'
+                        size='lg'>
+                        OPEN CAMERA
+                    </Button>
+                </Stack>
                 <FileInfo file={file} />
             </Group>
 
@@ -71,6 +97,12 @@ const Web: NextPage = () => {
                     />
                 </Box>
             }
+
+            <CameraCapturer
+                onCaptured={predictFromCamera}
+                opened={cameraIsOpen}
+                onClose={() => setCameraIsOpen(false)}
+            />
         </>
     );
 };
