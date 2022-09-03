@@ -2,7 +2,7 @@
 import { DropImage } from 'components/dropzone';
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import * as tf from '@tensorflow/tfjs';
 import { labels } from 'model/labels';
 import { Box, Button, Group, Paper, Stack } from '@mantine/core';
@@ -12,7 +12,7 @@ import { IconCamera } from '@tabler/icons';
 import CameraCapturer from 'components/CameraCapturer';
 
 const Web: NextPage = () => {
-    const isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    const [isMobileDevice, setIsMobileDevice] = useState(true);
     const [imgSrc, setImgSrc] = useState<string>();
     const [file, setFile] = useState<File>();
     const [classifying, setClassifying] = useState(false);
@@ -70,6 +70,10 @@ const Web: NextPage = () => {
         }
         setCameraIsOpen(true);
     };
+
+    useEffect(() => {
+        setIsMobileDevice(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
+    }, []);
 
     return (
         <>
