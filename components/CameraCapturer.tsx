@@ -13,6 +13,7 @@ export default function CameraCapturer(props: {
     const openCamera = async () => {
         const camera = document.getElementById('camera');
         if (!camera) return;
+
         camera.onfullscreenchange = e => {
             const fullScreenExited = !document.fullscreenElement;
             if (fullScreenExited) {
@@ -34,7 +35,8 @@ export default function CameraCapturer(props: {
                 if (!videoElement) return;
                 videoElement.srcObject = mediaStream;
             }).catch(error => {
-                console.error(` ${error} is not yet supported`);
+                alert(`${error} is not yet supported`);
+                props.onClose();
             });
     };
 

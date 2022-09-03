@@ -62,6 +62,14 @@ const Web: NextPage = () => {
         setClassifying(false);
     };
 
+    const openCamera = () => {
+        if (!navigator || !navigator.mediaDevices) {
+            alert('This feature is not supported on your browser');
+            return;
+        }
+        setCameraIsOpen(true);
+    };
+
     return (
         <>
             <Head>
@@ -77,7 +85,7 @@ const Web: NextPage = () => {
                 <Stack>
                     <DropImage onDrop={handleDrop} imgsrc={imgSrc} loading={classifying} />
                     <Button
-                        onClick={() => setCameraIsOpen(true)}
+                        onClick={openCamera}
                         rightIcon={<IconCamera />}
                         variant='light'
                         size='lg'>
