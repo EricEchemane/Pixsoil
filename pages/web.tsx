@@ -115,8 +115,9 @@ const Web: NextPage = () => {
             }
 
             <CameraCapturer
-                onCaptured={predictFromCamera}
+                isMobileDevice={isMobileDevice}
                 opened={cameraIsOpen}
+                onCaptured={predictFromCamera}
                 onClose={() => setCameraIsOpen(false)}
             />
         </>

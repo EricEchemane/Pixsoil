@@ -3,11 +3,11 @@ import { IconCheck, IconX } from "@tabler/icons";
 import html2canvas from "html2canvas";
 import { useEffect } from "react";
 
-
 export default function CameraCapturer(props: {
     onCaptured: (dataUrl: string) => void;
     onClose: () => void;
     opened: boolean;
+    isMobileDevice: boolean;
 }
 ) {
     const openCamera = async () => {
@@ -68,7 +68,7 @@ export default function CameraCapturer(props: {
         }}>
             <video autoPlay style={{
                 width: '100%',
-                transform: 'rotateY(180deg)'
+                transform: !props.isMobileDevice ? 'rotateY(180deg)' : ''
             }} />
             <div
                 style={{
