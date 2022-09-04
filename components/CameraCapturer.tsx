@@ -1,7 +1,7 @@
 import { ActionIcon } from "@mantine/core";
 import { IconCheck, IconX } from "@tabler/icons";
 import html2canvas from "html2canvas";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 export default function CameraCapturer(props: {
     onCaptured: (dataUrl: string) => void;
@@ -10,6 +10,15 @@ export default function CameraCapturer(props: {
     isMobileDevice: boolean;
 }
 ) {
+    const stream = useRef<MediaStream>();
+
+    const closeCamera = () => {
+        stream.current?.getTracks().forEach(function (track) {
+            track.stop();
+        });
+        props.onClose();
+    };
+
     const openCamera = async () => {
         const camera = document.getElementById('camera');
         if (!camera) return;
@@ -17,7 +26,7 @@ export default function CameraCapturer(props: {
         camera.onfullscreenchange = e => {
             const fullScreenExited = !document.fullscreenElement;
             if (fullScreenExited) {
-                props.onClose();
+                closeCamera();
             }
         };
 
@@ -34,6 +43,7 @@ export default function CameraCapturer(props: {
                 const videoElement = document.querySelector('video');
                 if (!videoElement) return;
                 videoElement.srcObject = mediaStream;
+                stream.current = mediaStream;
             }).catch(error => {
                 alert(`${error} is not yet supported`);
                 props.onClose();
@@ -44,6 +54,7 @@ export default function CameraCapturer(props: {
         openCamera();
         return () => {
             if (document.fullscreenElement) {
+                closeCamera();
                 document.exitFullscreen();
             }
         };
@@ -54,7 +65,7 @@ export default function CameraCapturer(props: {
         html2canvas(document.querySelectorAll('video')[0]).then((canvas) => {
             const dataUrl = canvas.toDataURL("image/png");
             props.onCaptured(dataUrl);
-            props.onClose();
+            closeCamera();
         });
     };
 
