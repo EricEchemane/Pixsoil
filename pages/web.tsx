@@ -82,7 +82,7 @@ const Web: NextPage = () => {
             </Head>
 
             <Paper shadow={'md'} px={'lg'} mb={'lg'}>
-                <img src='/logo.png' alt='logo' width={'100px'} />
+                <img src='/logo.png' alt='logo' width={'70px'} />
                 <sup><strong>🌱web</strong></sup>
             </Paper>
 
