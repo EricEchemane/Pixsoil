@@ -52,7 +52,7 @@ export function DropImage(props: Partial<DropImageProps>) {
                         </Stack>
                         : <div>
                             <Text size="xl" inline>
-                                Drag image here or click to select one
+                                Pick from device gallery
                             </Text>
                             <Text size="sm" color="dimmed" inline mt={7}>
                                 Each file should not exceed 5mb
