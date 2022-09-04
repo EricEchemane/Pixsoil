@@ -84,23 +84,23 @@ export default function CameraCapturer(props: {
                 style={{
                     width: '100%',
                     position: 'absolute',
-                    bottom: '2rem',
+                    bottom: '5rem',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    gap: '2rem'
+                    gap: '3rem'
                 }}>
                 <ActionIcon
                     onClick={props.onClose}
                     radius={50}
-                    size='lg'
+                    size='xl'
                     variant="filled">
                     <IconX size={30} />
                 </ActionIcon>
                 <ActionIcon
                     onClick={capture}
                     radius={50}
-                    size='lg'
+                    size='xl'
                     variant="filled">
                     <IconCheck size={30} />
                 </ActionIcon>
