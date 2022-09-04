@@ -97,7 +97,7 @@ const Web: NextPage = () => {
                         rightIcon={<IconCamera />}
                         variant='light'
                         size='lg'>
-                        OPEN CAMERA
+                        Open Camera
                     </Button>
                 </Stack>
                 <FileInfo file={file} />
