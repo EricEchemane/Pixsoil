@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import { Col, Group, Stack, Text, useMantineTheme } from '@mantine/core';
+import { Group, Stack, Text, useMantineTheme } from '@mantine/core';
 import { IconUpload, IconPhoto, IconX } from '@tabler/icons';
 import { Dropzone, DropzoneProps } from '@mantine/dropzone';
 
