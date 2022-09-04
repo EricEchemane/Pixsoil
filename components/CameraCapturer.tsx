@@ -46,7 +46,7 @@ export default function CameraCapturer(props: {
                 stream.current = mediaStream;
             }).catch(error => {
                 alert(`${error} is not yet supported`);
-                props.onClose();
+                closeCamera();
             });
     };
 
@@ -68,7 +68,6 @@ export default function CameraCapturer(props: {
             closeCamera();
         });
     };
-
 
     if (props.opened) return (
         <div id='camera' style={{
