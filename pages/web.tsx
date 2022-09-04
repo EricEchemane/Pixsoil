@@ -89,16 +89,17 @@ const Web: NextPage = () => {
             <Group p={'lg'} align='flex-start'>
                 <Stack align='stretch' style={{ width: isMobileDevice ? '100%' : 'auto' }}>
                     <DropImage
+                        isMobileDevice={isMobileDevice}
                         onDrop={handleDrop}
                         imgsrc={imgSrc}
                         loading={classifying} />
-                    <Button
+                    {isMobileDevice && <Button
                         onClick={openCamera}
                         rightIcon={<IconCamera />}
                         variant='light'
                         size='lg'>
                         Open Camera
-                    </Button>
+                    </Button>}
                 </Stack>
                 <FileInfo file={file} />
             </Group>

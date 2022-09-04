@@ -6,6 +6,7 @@ import { Dropzone, DropzoneProps } from '@mantine/dropzone';
 interface DropImageProps extends DropzoneProps {
     imgsrc: string | null;
     loading: boolean;
+    isMobileDevice: boolean;
 }
 
 export function DropImage(props: Partial<DropImageProps>) {
@@ -52,7 +53,7 @@ export function DropImage(props: Partial<DropImageProps>) {
                         </Stack>
                         : <div>
                             <Text size="xl" inline>
-                                Pick from device gallery
+                                {props.isMobileDevice ? 'Pick from device gallery' : 'Click to select one or drag and drop image here'}
                             </Text>
                             <Text size="sm" color="dimmed" inline mt={7}>
                                 Each file should not exceed 5mb
