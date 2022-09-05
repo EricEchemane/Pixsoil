@@ -5,7 +5,7 @@ import Head from 'next/head';
 import { useEffect, useState } from 'react';
 import * as tf from '@tensorflow/tfjs';
 import { labels } from 'model/labels';
-import { Box, Button, Group, Paper, Stack } from '@mantine/core';
+import { Box, Button, Container, Group, Paper, Stack } from '@mantine/core';
 import FileInfo from 'components/FileInfo';
 import Result from 'components/Results';
 import { IconCamera } from '@tabler/icons';
@@ -82,45 +82,49 @@ const Web: NextPage = () => {
             </Head>
 
             <Paper shadow={'md'} px={'lg'} mb={'lg'}>
-                <img src='/logo.png' alt='logo' width={'70px'} />
-                <sup><strong>🌱web</strong></sup>
+                <Container>
+                    <img src='/logo.png' alt='logo' width={'70px'} />
+                    <sup><strong>🌱web</strong></sup>
+                </Container>
             </Paper>
 
-            <Group p={'lg'} align='flex-start'>
-                <Stack align='stretch' style={{ width: isMobileDevice ? '100%' : 'auto' }}>
-                    <DropImage
-                        isMobileDevice={isMobileDevice}
-                        onDrop={handleDrop}
-                        imgsrc={imgSrc}
-                        loading={classifying} />
-                    {isMobileDevice && <Button
-                        onClick={openCamera}
-                        rightIcon={<IconCamera />}
-                        variant='light'
-                        size='lg'>
-                        Open Camera
-                    </Button>}
-                </Stack>
-                <FileInfo file={file} />
-            </Group>
+            <Container>
+                <Group p={'lg'} align='flex-start'>
+                    <Stack align='stretch' style={{ width: isMobileDevice ? '100%' : 'auto' }}>
+                        <DropImage
+                            isMobileDevice={isMobileDevice}
+                            onDrop={handleDrop}
+                            imgsrc={imgSrc}
+                            loading={classifying} />
+                        {isMobileDevice && <Button
+                            onClick={openCamera}
+                            rightIcon={<IconCamera />}
+                            variant='light'
+                            size='lg'>
+                            Open Camera
+                        </Button>}
+                    </Stack>
+                    <FileInfo file={file} />
+                </Group>
 
-            {prediction &&
-                <Box p={'lg'}>
-                    <Result
-                        accuracy_score={prediction.confidence}
-                        accuracy_score_rounded={(prediction.confidence * 100).toFixed(2)}
-                        classifying={classifying}
-                        soil_type={prediction.type}
-                    />
-                </Box>
-            }
+                {prediction &&
+                    <Box p={'lg'}>
+                        <Result
+                            accuracy_score={prediction.confidence}
+                            accuracy_score_rounded={(prediction.confidence * 100).toFixed(2)}
+                            classifying={classifying}
+                            soil_type={prediction.type}
+                        />
+                    </Box>
+                }
 
-            <CameraCapturer
-                isMobileDevice={isMobileDevice}
-                opened={cameraIsOpen}
-                onCaptured={predictFromCamera}
-                onClose={() => setCameraIsOpen(false)}
-            />
+                <CameraCapturer
+                    isMobileDevice={isMobileDevice}
+                    opened={cameraIsOpen}
+                    onCaptured={predictFromCamera}
+                    onClose={() => setCameraIsOpen(false)}
+                />
+            </Container>
         </>
     );
 };
