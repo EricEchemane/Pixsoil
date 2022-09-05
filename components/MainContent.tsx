@@ -1,14 +1,23 @@
+/* eslint-disable @next/next/no-img-element */
 import React from 'react';
 import { IconArrowNarrowRight, IconDownload } from '@tabler/icons';
 import Link from 'next/link';
-import { Anchor, Box, Button, Group, Text, Title } from '@mantine/core';
+import { Box, Button, Group, Text, Title } from '@mantine/core';
 import { useMediaQuery } from '@mantine/hooks';
 
 export default function MainContent() {
     const match = useMediaQuery('(max-width: 877px)', false);
     return (
         <Box>
-            <Title align={match ? 'center' : 'left'} className='pixsoil'> Pixsoil<sup>🌱</sup> </Title>
+            <Title align={match ? 'center' : 'left'} className='pixsoil'>
+                Pixsoil
+                <sup>
+                    <img
+                        src='/growing_plant.gif'
+                        alt='logo'
+                        width={'100px'} />
+                </sup>
+            </Title>
             <Title align={match ? 'center' : 'left'} order={2}> Scan your soil for better plant decision making  </Title>
             <Text align={match ? 'center' : 'left'} mt='xs'>
                 A machine learning web and mobile application for soil type classification
