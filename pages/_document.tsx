@@ -15,6 +15,8 @@ class MyDocument extends Document {
                     <meta name='description' content='Scan your soil for better planting decisions' />
                     <meta name='author' content='Eric Echemane' />
 
+                    <meta property="og:title" content="Pixsoil - Soil Type Scanner" />
+                    <meta property="og:description" content="Scan your soil for better planting decisions." />
                     <meta property="og:image" content="https://pixsoil.vercel.app/favicon.png" />
 
                     <link rel="preconnect" href="https://fonts.googleapis.com" />
