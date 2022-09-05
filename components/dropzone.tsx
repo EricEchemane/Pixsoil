@@ -2,15 +2,16 @@
 import { Group, Stack, Text, useMantineTheme } from '@mantine/core';
 import { IconUpload, IconPhoto, IconX } from '@tabler/icons';
 import { Dropzone, DropzoneProps } from '@mantine/dropzone';
+import useIsMobileDevice from 'hooks/useIsMobileDevice';
 
 interface DropImageProps extends DropzoneProps {
     imgsrc: string | null;
     loading: boolean;
-    isMobileDevice: boolean;
 }
 
 export function DropImage(props: Partial<DropImageProps>) {
     const theme = useMantineTheme();
+    const isMobileDevice = useIsMobileDevice();
     return (
         <Dropzone
             onDrop={(files) => console.log('accepted files', files)}
@@ -53,7 +54,7 @@ export function DropImage(props: Partial<DropImageProps>) {
                         </Stack>
                         : <div>
                             <Text size="xl" inline>
-                                {props.isMobileDevice ? 'Pick from device gallery' : 'Click to select one or drag and drop image here'}
+                                {isMobileDevice ? 'Pick from device gallery' : 'Click to select one or drag and drop image here'}
                             </Text>
                             <Text size="sm" color="dimmed" inline mt={7}>
                                 Each file should not exceed 5mb

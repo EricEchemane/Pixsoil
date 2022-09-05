@@ -2,7 +2,7 @@
 import { DropImage } from 'components/dropzone';
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import * as tf from '@tensorflow/tfjs';
 import { labels } from 'model/labels';
 import { Box, Button, Container, Group, Paper, Stack } from '@mantine/core';
@@ -10,9 +10,10 @@ import FileInfo from 'components/FileInfo';
 import Result from 'components/Results';
 import { IconCamera } from '@tabler/icons';
 import CameraCapturer from 'components/CameraCapturer';
+import useIsMobileDevice from 'hooks/useIsMobileDevice';
 
 const Web: NextPage = () => {
-    const [isMobileDevice, setIsMobileDevice] = useState(true);
+    const isMobileDevice = useIsMobileDevice();
     const [imgSrc, setImgSrc] = useState<string>();
     const [file, setFile] = useState<File>();
     const [classifying, setClassifying] = useState(false);
@@ -71,10 +72,6 @@ const Web: NextPage = () => {
         setCameraIsOpen(true);
     };
 
-    useEffect(() => {
-        setIsMobileDevice(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
-    }, []);
-
     return (
         <>
             <Head>
@@ -84,7 +81,9 @@ const Web: NextPage = () => {
             <Paper shadow={'md'} px={'lg'} mb={'lg'}>
                 <Container>
                     <img src='/logo.png' alt='logo' width={'70px'} />
-                    <sup><strong>🌱web</strong></sup>
+                    <sup>
+                        <strong>🌱web</strong>
+                    </sup>
                 </Container>
             </Paper>
 
@@ -92,7 +91,6 @@ const Web: NextPage = () => {
                 <Group p={'lg'} align='flex-start'>
                     <Stack align='stretch' style={{ width: isMobileDevice ? '100%' : 'auto' }}>
                         <DropImage
-                            isMobileDevice={isMobileDevice}
                             onDrop={handleDrop}
                             imgsrc={imgSrc}
                             loading={classifying} />
