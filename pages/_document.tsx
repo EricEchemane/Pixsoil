@@ -14,6 +14,9 @@ class MyDocument extends Document {
                     <link rel="icon" href="/favicon.png" />
                     <meta name='description' content='Scan your soil for better planting decisions' />
                     <meta name='author' content='Eric Echemane' />
+
+                    <meta property="og:image" content="https://pixsoil.vercel.app/favicon.png" />
+
                     <link rel="preconnect" href="https://fonts.googleapis.com" />
                     <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin='true' />
                     <link href="https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap" rel="stylesheet" />
