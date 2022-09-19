@@ -9,21 +9,24 @@ const researchers = [
         facebookUrl: 'https://www.facebook.com/e.echemane/',
         photoUrl: '/profiles/eric.jpg',
         instagramUrl: 'https://www.instagram.com/ericechemane/',
-        githubUrl: 'https://github.com/EricEchemane'
+        githubUrl: 'https://github.com/EricEchemane',
+        role: "Software Engineer & Reseacher"
     },
     {
         name: 'Mark Alcel Bautista',
         facebookUrl: 'https://www.facebook.com/alcelbautista26',
         photoUrl: '/profiles/alcel.jpg',
         instagramUrl: 'https://www.instagram.com/alcelbautista17/',
-        githubUrl: null
+        githubUrl: null,
+        role: "Documentor & Reseacher"
     },
     {
         name: 'Jamel Varela',
         facebookUrl: 'https://www.facebook.com/profile.php?id=100005122395396',
         photoUrl: '/profiles/jamel.jpg',
         instagramUrl: 'https://www.instagram.com/jamvrla/',
-        githubUrl: null
+        githubUrl: null,
+        role: "Documentor & Reseacher"
     },
 ];
 
@@ -37,9 +40,9 @@ export default function Researchers() {
                 <Stack spacing={'lg'}>
 
                     <Title> The Researchers </Title>
-                    <Text> We are in coming 4th year computer science students at University of Muntinlupa. </Text>
+                    <Text> 4th year computer science students at University of Muntinlupa. </Text>
 
-                    {researchers.map(({ facebookUrl, githubUrl, instagramUrl, name, photoUrl }, index) => {
+                    {researchers.map(({ facebookUrl, githubUrl, instagramUrl, name, photoUrl, role }, index) => {
                         return (
                             <Paper p='md' shadow={'md'} key={index}>
                                 <Group>
@@ -51,9 +54,10 @@ export default function Researchers() {
                                         src={photoUrl}
                                         alt={`${name}'s photo`}
                                         size={'xl'} />
-                                    <Stack>
+                                    <Stack spacing={0}>
                                         <Title order={4}> {name} </Title>
-                                        <Group>
+                                        <Text weight={'bold'} color='dimmed'> {role} </Text>
+                                        <Group mt={8}>
                                             <ActionIcon
                                                 component='a'
                                                 target={'_blank'}
