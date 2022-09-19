@@ -14,8 +14,6 @@ const Home: NextPage = () => {
         <title> Pixsoil - Soil Type Scanner </title>
       </Head>
 
-      {match && <Title mt='xl' align='center' order={1}> Pixsoil </Title>}
-
       <Group
         align={'flex-start'}
         position='center'>
