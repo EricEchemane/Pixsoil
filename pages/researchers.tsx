@@ -10,7 +10,7 @@ const researchers = [
         photoUrl: '/profiles/eric.jpg',
         instagramUrl: 'https://www.instagram.com/ericechemane/',
         githubUrl: 'https://github.com/EricEchemane',
-        role: "Software Engineer & Reseacher"
+        role: "Software Engineer"
     },
     {
         name: 'Mark Alcel Bautista',
@@ -18,7 +18,7 @@ const researchers = [
         photoUrl: '/profiles/alcel.jpg',
         instagramUrl: 'https://www.instagram.com/alcelbautista17/',
         githubUrl: null,
-        role: "Documentor & Reseacher"
+        role: "Documentor"
     },
     {
         name: 'Jamel Varela',
@@ -26,7 +26,7 @@ const researchers = [
         photoUrl: '/profiles/jamel.jpg',
         instagramUrl: 'https://www.instagram.com/jamvrla/',
         githubUrl: null,
-        role: "Documentor & Reseacher"
+        role: "Documentor"
     },
 ];
 
