@@ -92,9 +92,7 @@ export default function Result(result: {
                             mb={"1rem"}
                             key={index}>
                             <Text weight={700}> {plant.name} </Text>
-                            <Group
-                                align="flex-start"
-                                noWrap>
+                            <Group align="flex-start">
                                 <img
                                     className='suitable-plant-image'
                                     src={plant.image}
