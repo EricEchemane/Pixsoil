@@ -102,7 +102,7 @@ const Web: NextPage = () => {
                             Open Camera
                         </Button>}
                     </Stack>
-                    <FileInfo file={file} />
+                    {/* <FileInfo file={file} /> */}
                 </Group>
 
                 {prediction &&

@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import { Button, Group, Modal, Stack, Table, Text, Title } from '@mantine/core';
+import { Button, Divider, Group, Modal, Stack, Table, Text, Title } from '@mantine/core';
 import { plants } from 'model/plants';
 import { soil_properties as soil_props } from 'model/soil_properties';
 import React from 'react';
@@ -102,6 +102,7 @@ export default function Result(result: {
                                     {plant.description}
                                 </Text>
                             </Group>
+                            <Divider />
                         </Stack>
                     ))}
                 </Stack>
