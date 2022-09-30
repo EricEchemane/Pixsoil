@@ -63,6 +63,7 @@ export default function Result(result: {
                                 <td>{prop[0]}</td>
                                 <td>
                                     <Button
+                                        size='xs'
                                         onClick={() => showPlants(prop[1] as plantType)}
                                         variant="light">
                                         See list of suitable plants
