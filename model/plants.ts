@@ -1,5 +1,5 @@
 export const plants = {
-    "Majority of vegetables": [
+    "majority of vegetables": [
         {
             "name": "Broccoli",
             "image":
@@ -70,7 +70,7 @@ export const plants = {
                 "Snap and snow peas do best with trellis even if they say they are no-trellis varieties. Pea pods can be harvested at any time: the whole thing is delicious.",
         },
     ],
-    "Bulbs and Tubers": [
+    "bulbs and tubers": [
         {
             "name": "Onion",
             "image":

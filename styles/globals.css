@@ -47,3 +47,10 @@ body {
   max-width: 10ch;
   word-wrap: break-word;
 }
+
+.suitable-plant-image {
+  border-radius: .7rem;
+  width: 200px;
+  box-shadow: 0 8px -4px 24px rgba(212, 248, 215, 0.813);
+  float: left;
+}
