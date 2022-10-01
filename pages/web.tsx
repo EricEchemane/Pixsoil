@@ -22,7 +22,7 @@ const Web: NextPage = () => {
     const [prediction, setPrediction] = useState<{
         type: string;
         confidence: number;
-    }>();
+    } | null>();
 
     async function handleDrop(files: File[]) {
         const file = files[0];
@@ -50,21 +50,24 @@ const Web: NextPage = () => {
     };
 
     const predict = async (img: HTMLImageElement) => {
+        setNotRecognized(false);
         const model = await tf.loadLayersModel('/tfjs_files/model.json');
         const imageTensor = tf.browser.fromPixels(img)
             .expandDims(0)
             .expandDims(-1)
             .div(255.0)
             .reshape([-1, 256, 256, 3]);
+
         const pred: any = model.predict(imageTensor);
         const results = await pred.data();
         const confidence = Math.max(...results);
         const index = results.findIndex((r: any) => r === confidence);
         const type = labels[index];
 
-        if (type === "not" || confidence < 0.9) {
+        if (type === "not" || confidence < 0.85) {
             setNotRecognized(true);
             setClassifying(false);
+            setPrediction(null);
             return;
         }
 
