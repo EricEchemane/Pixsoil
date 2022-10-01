@@ -5,7 +5,7 @@ import Head from 'next/head';
 import { useState } from 'react';
 import * as tf from '@tensorflow/tfjs';
 import { labels } from 'model/labels';
-import { Box, Button, Container, Group, Paper, Stack } from '@mantine/core';
+import { Box, Button, Container, Group, Paper, Stack, Text, Title } from '@mantine/core';
 import FileInfo from 'components/FileInfo';
 import Result from 'components/Results';
 import { IconCamera } from '@tabler/icons';
@@ -18,6 +18,7 @@ const Web: NextPage = () => {
     const [file, setFile] = useState<File>();
     const [classifying, setClassifying] = useState(false);
     const [cameraIsOpen, setCameraIsOpen] = useState(false);
+    const [notRecognized, setNotRecognized] = useState(false);
     const [prediction, setPrediction] = useState<{
         type: string;
         confidence: number;
@@ -57,10 +58,17 @@ const Web: NextPage = () => {
             .reshape([-1, 256, 256, 3]);
         const pred: any = model.predict(imageTensor);
         const results = await pred.data();
-        const max = Math.max(...results);
-        const index = results.findIndex((r: any) => r === max);
+        const confidence = Math.max(...results);
+        const index = results.findIndex((r: any) => r === confidence);
+        const type = labels[index];
 
-        setPrediction({ confidence: max, type: labels[index] });
+        if (type === "not" || confidence < 0.9) {
+            setNotRecognized(true);
+            setClassifying(false);
+            return;
+        }
+
+        setPrediction({ confidence, type });
         setClassifying(false);
     };
 
@@ -115,6 +123,17 @@ const Web: NextPage = () => {
                         />
                     </Box>
                 }
+                {notRecognized && <Box p={'lg'}>
+                    <Title
+                        order={2}
+                        align="center"
+                        sx={{ color: "orange" }}>
+                        Hmmm🤔, seems like the image is not a soil.
+                    </Title>
+                    <Text align="center" size={'xl'} mt=".5rem">
+                        Please select a different one.
+                    </Text>
+                </Box>}
 
                 <CameraCapturer
                     isMobileDevice={isMobileDevice}

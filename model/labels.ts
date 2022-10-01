@@ -1,1 +1,1 @@
-export const labels = ['clay', 'gravel', 'humus', 'sand', 'silt'];
+export const labels = ['clay', 'gravel', 'humus', 'not', 'sand', 'silt'];
