@@ -19,6 +19,7 @@ const Web: NextPage = () => {
     const [classifying, setClassifying] = useState(false);
     const [cameraIsOpen, setCameraIsOpen] = useState(false);
     const [notRecognized, setNotRecognized] = useState(false);
+    const [notSoilType, setNotSoilType] = useState<string | null>(null);
     const [prediction, setPrediction] = useState<{
         type: string;
         confidence: number;
@@ -64,7 +65,8 @@ const Web: NextPage = () => {
         const index = results.findIndex((r: any) => r === confidence);
         const type = labels[index];
 
-        if (type === "not" || confidence < 0.85) {
+        if (type === "not" || type === "alike") {
+            setNotSoilType(type);
             setNotRecognized(true);
             setClassifying(false);
             setPrediction(null);
@@ -131,7 +133,9 @@ const Web: NextPage = () => {
                         order={2}
                         align="center"
                         sx={{ color: "orange" }}>
-                        Hmmm🤔, seems like the image is not a soil.
+                        {notSoilType === "not"
+                            ? "Hmmm🤔, seems like the image is not a soil."
+                            : "Hmmm🤔, seems like the image is a soil but it's not."}
                     </Title>
                     <Text align="center" size={'xl'} mt=".5rem">
                         Please select a different one.
