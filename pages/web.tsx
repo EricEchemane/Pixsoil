@@ -107,13 +107,13 @@ const Web: NextPage = () => {
                             onDrop={handleDrop}
                             imgsrc={imgSrc}
                             loading={classifying} />
-                        {isMobileDevice && <Button
+                        {/* {isMobileDevice && <Button
                             onClick={openCamera}
                             rightIcon={<IconCamera />}
                             variant='light'
                             size='lg'>
                             Open Camera
-                        </Button>}
+                        </Button>} */}
                     </Stack>
                     <FileInfo file={file} />
                 </Group>
