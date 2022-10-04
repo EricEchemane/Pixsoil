@@ -77,13 +77,13 @@ const Web: NextPage = () => {
         setClassifying(false);
     };
 
-    const openCamera = () => {
-        if (!navigator || !navigator.mediaDevices) {
-            alert('This feature is not supported on your browser');
-            return;
-        }
-        setCameraIsOpen(true);
-    };
+    // const openCamera = () => {
+    //     if (!navigator || !navigator.mediaDevices) {
+    //         alert('This feature is not supported on your browser');
+    //         return;
+    //     }
+    //     setCameraIsOpen(true);
+    // };
 
     return (
         <>
@@ -133,9 +133,10 @@ const Web: NextPage = () => {
                         order={2}
                         align="center"
                         sx={{ color: "orange" }}>
-                        {notSoilType === "not"
+                        Hmmm🤔, seems like the image is not a soil.
+                        {/* {notSoilType === "not"
                             ? "Hmmm🤔, seems like the image is not a soil."
-                            : "Hmmm🤔, seems like the image is a soil but it's not."}
+                            : "Hmmm🤔, seems like the image is a soil but it's not."} */}
                     </Title>
                     <Text align="center" size={'xl'} mt=".5rem">
                         Please select a different one.
