@@ -65,7 +65,9 @@ const Web: NextPage = () => {
         const index = results.findIndex((r: any) => r === confidence);
         const type = labels[index];
 
-        if (type === "not" || type === "alike" || confidence < 0.95) {
+        console.log(type, confidence);
+
+        if (type === "not" || type === "alike") {
             setNotSoilType(type);
             setNotRecognized(true);
             setClassifying(false);

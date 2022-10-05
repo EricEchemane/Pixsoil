@@ -42,6 +42,19 @@ export const soil_properties = [
         "Suitable Plants": "majority of vegetables"
     },
     {
+        "name": "yellow",
+        "Colors": "yellow, golden brown",
+        "Grain Size": "bigger than clay, smaller than sand",
+        "Acidity": "slightly acidic to slightly alkaline",
+        "Texture": "very fine and soft",
+        "How to verify the type": "smooth and soapy to the touch",
+        "Water and Nutrient Holding Capacity": "lower than clay, higher than sand",
+        "Porosity": "good",
+        "Other properties": "easy to compact",
+        "How to improve the soil": "add organic matter, cultivation",
+        "Suitable Plants": "majority of vegetables"
+    },
+    {
         "name": "humus",
         "Colors": "dark brown, black",
         "Grain Size": "small to soft large size",
