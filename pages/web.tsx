@@ -67,7 +67,9 @@ const Web: NextPage = () => {
 
         console.log(type, confidence);
 
-        if (type === "not" || type === "alike") {
+        if (type === "not"
+            || type === "alike"
+            || confidence < .75) {
             setNotSoilType(type);
             setNotRecognized(true);
             setClassifying(false);
@@ -136,12 +138,9 @@ const Web: NextPage = () => {
                         align="center"
                         sx={{ color: "orange" }}>
                         Hmmm🤔, seems like the image is not a soil.
-                        {/* {notSoilType === "not"
-                            ? "Hmmm🤔, seems like the image is not a soil."
-                            : "Hmmm🤔, seems like the image is a soil but it's not."} */}
                     </Title>
                     <Text align="center" size={'xl'} mt=".5rem">
-                        Please select a different one.
+                        Remove unnecessary objects on top of your soil or select a different one.
                     </Text>
                 </Box>}
 
