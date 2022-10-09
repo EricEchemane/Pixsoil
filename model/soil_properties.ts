@@ -101,7 +101,7 @@ export const soil_properties = [
         "Other properties": "dries out and gets hard rapidly in hot weather",
         "How to improve the soil":
             "water the soil to soften it. add organic matter, such as composted manure or peat, and tillig it into the top eight inches of soil",
-        "Suitable Plants": "usual plants"
+        "Suitable Plants": "Bulbs and Tubers"
     },
     {
         "name": "grassy",
