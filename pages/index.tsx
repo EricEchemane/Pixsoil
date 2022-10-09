@@ -20,7 +20,7 @@ const Home: NextPage = () => {
         <Box>
           <MobileApp />
         </Box>
-        <Box p='xl' style={{ marginTop: match ? '508px' : '5rem' }}>
+        <Box px='xl' style={{ marginTop: match ? '508px' : '0' }}>
           <MainContent />
         </Box>
       </Group>
