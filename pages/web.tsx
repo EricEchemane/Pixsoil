@@ -67,9 +67,7 @@ const Web: NextPage = () => {
 
         console.log(type, confidence);
 
-        if (type === "not"
-            || type === "alike"
-            || confidence < .75) {
+        if (type === "not" || type === "alike" || confidence < .75) {
             setNotSoilType(type);
             setNotRecognized(true);
             setClassifying(false);

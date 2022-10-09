@@ -142,4 +142,5 @@ export const plants = {
                 "Radishes are rich in antioxidants and minerals like calcium and potassium. Together, these nutrients help lower high blood pressure and reduce your risks for heart disease. The radish is also a good source of natural nitrates that improve blood flow.",
         },
     ],
+    "usual plants": []
 };
