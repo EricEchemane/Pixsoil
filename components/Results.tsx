@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import { Button, Divider, Group, Modal, Stack, Table, Text, Title } from '@mantine/core';
+import { Button, Divider, Group, Modal, Paper, Stack, Table, Text, Title } from '@mantine/core';
 import { plants } from 'model/plants';
 import { soil_properties as soil_props } from 'model/soil_properties';
 import React from 'react';
@@ -80,19 +80,22 @@ export default function Result(result: {
             </Table>
 
             <Modal
-                size="lg"
+                size="xl"
                 title={<Title order={4} mb={10}> Suitable Plants: </Title>}
                 overflow="inside"
                 closeOnClickOutside={false}
                 onClose={() => setPlantsModalOpened(false)}
                 opened={plantsModalOpened}>
-                <Stack>
+                <Group align="flex-start">
                     {suitablePlants.map((plant, index) => (
-                        <Stack
-                            mb={"1rem"}
+                        <Paper
+                            p="1rem"
+                            withBorder
+                            shadow="lg"
                             key={index}>
-                            <Text weight={700}> {plant.name} </Text>
-                            <Group align="flex-start">
+                            <Stack
+                                style={{ width: "min(300px,90vw)" }}>
+                                <Title order={3}> {plant.name} </Title>
                                 <img
                                     className='suitable-plant-image'
                                     src={plant.image}
@@ -100,11 +103,10 @@ export default function Result(result: {
                                 <Text>
                                     {plant.description}
                                 </Text>
-                            </Group>
-                            <Divider />
-                        </Stack>
+                            </Stack>
+                        </Paper>
                     ))}
-                </Stack>
+                </Group>
             </Modal>
         </>
     );

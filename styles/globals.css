@@ -50,7 +50,7 @@ body {
 
 .suitable-plant-image {
   border-radius: .7rem;
-  width: 200px;
+  width: 100%;
   box-shadow: 0 8px -4px 24px rgba(212, 248, 215, 0.813);
   float: left;
 }
