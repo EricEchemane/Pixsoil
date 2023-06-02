@@ -2,6 +2,7 @@ body {
   background-image: url(/background.svg);
   background-size: 100%;
   background-attachment: fixed;
+  height: max-content;
 }
 
 .oleo {
@@ -20,12 +21,6 @@ body {
   display: inline-block;
   width: 242px;
   margin-top: calc((100vh - 508px) / 2);
-}
-
-@media screen and (max-width: 877px) {
-  .mobile {
-    margin-top: 4rem;
-  }
 }
 
 .mobile video {
