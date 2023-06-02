@@ -14,14 +14,12 @@ const Home: NextPage = () => {
         <title> Pixsoil - Soil Type Scanner </title>
       </Head>
 
-      <Group
-        align={'flex-start'}
-        position='center'>
+      <Group align={'flex-start'} position='center'>
+        <Box px='xl'>
+          <MainContent />
+        </Box>
         <Box>
           <MobileApp />
-        </Box>
-        <Box px='xl' style={{ marginTop: match ? '508px' : '0' }}>
-          <MainContent />
         </Box>
       </Group>
     </>
