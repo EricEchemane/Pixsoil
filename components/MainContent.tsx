@@ -11,6 +11,7 @@ const pixsoil = `${oleo.className} pixsoil`;
 
 export default function MainContent() {
   const match = useMediaQuery('(max-width: 910px)', false);
+
   return (
     <Box px={'xl'}>
       <Title align={match ? 'center' : 'left'} className={pixsoil}>

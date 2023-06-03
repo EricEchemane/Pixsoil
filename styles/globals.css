@@ -17,7 +17,7 @@ body {
 .mobile {
   position: relative;
   width: 242px;
-  margin-top: calc((100vh - 508px) / 2);
+  margin: 5rem 2rem 0;
 }
 
 @media screen and (max-width: 910px) {
