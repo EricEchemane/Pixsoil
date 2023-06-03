@@ -2,7 +2,6 @@ body {
   background-image: url(/background.svg);
   background-size: 100%;
   background-attachment: fixed;
-  height: max-content;
 }
 
 .oleo {
@@ -17,28 +16,28 @@ body {
 
 .mobile {
   position: relative;
-  display: inline-block;
   width: 242px;
   margin-top: calc((100vh - 508px) / 2);
 }
 
 @media screen and (max-width: 910px) {
   .mobile {
-    margin-top: 5rem;
+    margin-top: 4rem;
+    padding-bottom: 4rem;
   }
 }
 
 .mobile video {
-  width: 220px;
+  width: 91%;
   position: absolute;
   top: 9px;
   left: 9px;
+  border-radius: 1rem;
 }
 
 .mobile .frame {
-  width: 242px;
+  width: 100%;
   height: 508px;
-  position: absolute;
   top: 0;
   left: 0;
 }
