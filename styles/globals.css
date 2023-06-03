@@ -10,7 +10,6 @@ body {
 }
 
 .pixsoil {
-  font-family: 'Oleo Script', cursive;
   font-size: 5rem;
   color: #815115;
   margin: 5rem auto 0;
@@ -21,6 +20,12 @@ body {
   display: inline-block;
   width: 242px;
   margin-top: calc((100vh - 508px) / 2);
+}
+
+@media screen and (max-width: 910px) {
+  .mobile {
+    margin-top: 5rem;
+  }
 }
 
 .mobile video {
