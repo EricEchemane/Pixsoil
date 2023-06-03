@@ -10,7 +10,7 @@ const oleo = Oleo_Script({ weight: '700', subsets: ['latin'], preload: true });
 const pixsoil = `${oleo.className} pixsoil`;
 
 export default function MainContent() {
-  const match = useMediaQuery('(max-width: 877px)', false);
+  const match = useMediaQuery('(max-width: 910px)', false);
   return (
     <Box>
       <Title align={match ? 'center' : 'left'} className={pixsoil}>
