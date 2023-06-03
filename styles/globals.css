@@ -20,10 +20,14 @@ body {
   margin: 5rem 2rem 0;
 }
 
-@media screen and (max-width: 910px) {
+@media screen and (max-width: 980px) {
   .mobile {
     margin-top: 4rem;
     padding-bottom: 4rem;
+  }
+  #container {
+    flex-direction: column-reverse;
+    align-items: center;
   }
 }
 

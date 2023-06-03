@@ -11,9 +11,9 @@ const Home: NextPage = () => {
         <title> Pixsoil - Soil Type Scanner </title>
       </Head>
 
-      <Group align={'flex-start'} position='center' p={'lg'}>
-        <MainContent />
+      <Group align={'flex-start'} position='center' p={'lg'} id='container'>
         <MobileApp />
+        <MainContent />
       </Group>
     </>
   );

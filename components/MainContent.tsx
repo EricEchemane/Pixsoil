@@ -10,7 +10,7 @@ const oleo = Oleo_Script({ weight: '700', subsets: ['latin'], preload: true });
 const pixsoil = `${oleo.className} pixsoil`;
 
 export default function MainContent() {
-  const match = useMediaQuery('(max-width: 910px)', false);
+  const match = useMediaQuery('(max-width: 980px)', false);
 
   return (
     <Box px={'xl'}>
